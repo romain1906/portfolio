@@ -1,0 +1,15 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Charge Stream",
+      "description": "Charge Stream est une application que j'ai fait pendant mon stage de 15 semaines, du 29 janvier au 17 mai. Elle utilise le protocole OCPP pour communiquer avec les bornes directement. Elle a comme back end Spring Boot et comme frontend Angular avec PrimeNG. Les technologies Docker et AWS ont été utilisées.",
+      "image": "chargeStreamImage",
+      "technologies": {
+        "backend": ["springboot", "docker", "aws"],
+        "frontend": ["angular", "primeng"],
+        "protocol": ["ocpp"]
+      }
+    }
+  ]
+}
