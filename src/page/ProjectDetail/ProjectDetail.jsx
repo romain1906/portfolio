@@ -1,13 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import chargeStreamImage from '../../assets/chargeStream.png';
-import levitaImage from '../../assets/levita.jpg';
-import lesahrImage from '../../assets/lesahr.png';
-import gvoyageImage from '../../assets/gvoyageWeb.png';
-import ocpp from '../../assets/ocpp.png';
-import bluetooth from '../../assets/bluetooth.png';
-import googlePlayIcon from '../../assets/google-play.png';
-import appleStoreIcon from '../../assets/app-store.png';
 import { LanguageContext } from '../../context/LanguageContext';
 import "./ProjectDetail.css";
 
@@ -37,12 +29,14 @@ const ProjectDetail = () => {
     }
 
     const images = {
-        chargeStreamImage,
-        ocpp,
-        levitaImage,
-        lesahrImage,
-        gvoyageImage,
-        bluetooth
+        chargeStreamImage: '/assets/chargeStream.png',
+        ocpp: '/assets/ocpp.png',
+        levitaImage: '/assets/levita.jpg',
+        lesahrImage: '/assets/lesahr.png',
+        gvoyageImage: '/assets/gvoyageWeb.png',
+        bluetooth: '/assets/bluetooth.png',
+        googlePlayIcon: '/assets/google-play.png',
+        appleStoreIcon: '/assets/app-store.png'
     };
 
     const highlightTechnologies = (description, technologies) => {
@@ -110,12 +104,12 @@ const ProjectDetail = () => {
                         <div className="links">
                             {project.links.googlePlay && (
                                 <a href={project.links.googlePlay} target="_blank" rel="noopener noreferrer">
-                                    <img src={googlePlayIcon} alt="Google Play" className="store-icon" />
+                                    <img src={images.googlePlayIcon} alt="Google Play" className="store-icon" />
                                 </a>
                             )}
                             {project.links.appleStore && (
                                 <a href={project.links.appleStore} target="_blank" rel="noopener noreferrer">
-                                    <img src={appleStoreIcon} alt="Apple Store" className="store-icon" />
+                                    <img src={images.appleStoreIcon} alt="Apple Store" className="store-icon" />
                                 </a>
                             )}
                         </div>

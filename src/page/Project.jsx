@@ -2,10 +2,6 @@ import React, { useState, useEffect } from "react";
 import Carousel from 'react-spring-3d-carousel';
 import { config } from 'react-spring';
 import Card from '../component/card/card';
-import chargeStreamImage from '../assets/chargeStream.png';
-import levita from '../assets/levita.jpg';
-import gvoyageWeb from '../assets/gvoyageWeb.png';
-import lesahr from '../assets/lesahr.png';
 
 const Projects = () => {
     const [goToSlide, setGoToSlide] = useState(0);
@@ -14,23 +10,32 @@ const Projects = () => {
     const [slides, setSlides] = useState([]);
     const [prevSlide, setPrevSlide] = useState(0);
 
+    const images = {
+        chargeStreamImage: '/assets/chargeStream.png',
+        ocpp: '/assets/ocpp.png',
+        levitaImage: '/assets/levita.jpg',
+        lesahrImage: '/assets/lesahr.png',
+        gvoyageImage: '/assets/gvoyageWeb.png',
+        bluetooth: '/assets/bluetooth.png'
+    };
+
     useEffect(() => {
         setSlides([
             {
                 key: 1,
-                content: <Card id={1} title="Charge Stream" description="Application de gestion de bornes électriques pour les entreprise" image={chargeStreamImage} technologies={["spring", "angular", "docker", "amazonwebservices"]} />
+                content: <Card id={1} title="Charge Stream" description="Application de gestion de bornes électriques pour les entreprise" image={images.chargeStreamImage} technologies={["spring", "angular", "docker", "amazonwebservices"]} />
             },
             {
                 key: 2,
-                content: <Card id={2} title="Levita Controler" description="Application mobile pour telecommander un dispositif Levita" image={levita} technologies={["flutter", "angular", "electron"]} />
+                content: <Card id={2} title="Levita Controler" description="Application mobile pour telecommander un dispositif Levita" image={images.levitaImage} technologies={["flutter", "angular", "electron"]} />
             },
             {
                 key: 3,
-                content: <Card id={3} title="GVoyage" description="Application de gestion de voyage" image={gvoyageWeb} technologies={["dotnetcore", "flutter", "vuejs"]} />
+                content: <Card id={3} title="GVoyage" description="Application de gestion de voyage" image={images.gvoyageImage} technologies={["dotnetcore", "flutter", "vuejs"]} />
             },
             {
                 key: 4,
-                content: <Card id={4} title="LesahrWeb" description="Mignation de version de PHP pour l'application" image={lesahr} technologies={["php"]} />
+                content: <Card id={4} title="LesahrWeb" description="Mignation de version de PHP pour l'application" image={images.lesahrImage} technologies={["php"]} />
             }
         ]);
     }, []);

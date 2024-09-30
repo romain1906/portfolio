@@ -28,6 +28,10 @@ const Home = () => {
         return <div>Loading...</div>;
     }
 
+    const images = {
+        profilePic: '/assets/IMG_5190.jpg',
+    }
+
     return (
         <div className="home-container">
             <h1>{translations.title[language]}</h1>
@@ -45,7 +49,7 @@ const Home = () => {
                         />
                     </a>
                 ) : (
-                    <img src={require('../../assets/IMG_5190.jpg')} alt="Romain Geurts" className="profile-pic"/>
+                    <img src={images.profilePic} alt="Romain Geurts" className="profile-pic"/>
                 )}
             </div>
             <div className="technologies">

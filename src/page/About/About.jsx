@@ -1,6 +1,10 @@
 import React from "react";
-import pdfFile from "../../assets/CV Geurts Romain.pdf"; // Ajuste le chemin du fichier PDF si nécessaire
 import "./About.css";
+
+const pdf = {
+    src: '/assets/CV Geurts Romain.pdf',
+    title: "CV Geurts Romain"
+};
 
 const About = () => {
     return (
@@ -16,7 +20,7 @@ const About = () => {
             </div>
             <div className="pdf-container">
                 <iframe
-                    src={pdfFile}
+                    src={pdf.src}
                     className="pdf-viewer"
                     title="CV Geurts Romain"
                     frameBorder="0"
