@@ -1,51 +1,126 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import chargeStreamImage from '../assets/chargeStream.png';
-import ocppImage from '../assets/ocpp.png';
+import chargeStreamImage from '../../assets/chargeStream.png';
+import levitaImage from '../../assets/levita.jpg';
+import lesahrImage from '../../assets/lesahr.png';
+import gvoyageImage from '../../assets/gvoyageWeb.png';
+import ocpp from '../../assets/ocpp.png';
+import bluetooth from '../../assets/bluetooth.png';
+import googlePlayIcon from '../../assets/google-play.png';
+import appleStoreIcon from '../../assets/app-store.png';
+import { LanguageContext } from '../../context/LanguageContext';
+import "./ProjectDetail.css";
 
 const ProjectDetail = () => {
     const { id } = useParams();
+    const { language } = useContext(LanguageContext);
+    const [project, setProject] = useState(null);
+    const [translations, setTranslations] = useState(null);
 
-    const projectDetails = {
-        1: {
-            title: "Charge Stream",
-            description: "Charge Stream est une application que j'ai fait pendant mon stage de 15 semaines, du 29 janvier au 17 mai. Elle utilise le protocole OCPP pour communiquer avec les bornes directement. Elle a comme back end Spring Boot et comme frontend Angular avec PrimeNG. Les technologies Docker et AWS ont été utilisées.",
-            image: chargeStreamImage,
-            technologies: {
-                backend: ["springboot", "docker", "aws"],
-                frontend: ["angular", "primeng"],
-                protocol: ["ocpp"]
-            }
-        },
-        // Add other projects here if needed
+    useEffect(() => {
+        fetch('/data/projects.json')
+            .then(response => response.json())
+            .then(data => {
+                const projectData = data.projects.find(proj => proj.id === parseInt(id));
+                setProject(projectData);
+            });
+    }, [id]);
+
+    useEffect(() => {
+        fetch('/data/translate.json')
+            .then(response => response.json())
+            .then(data => setTranslations(data.projects));
+    }, []);
+
+    if (!project || !translations) {
+        return <div>Loading...</div>;
+    }
+
+    const images = {
+        chargeStreamImage,
+        ocpp,
+        levitaImage,
+        lesahrImage,
+        gvoyageImage,
+        bluetooth
     };
 
-    const project = projectDetails[id];
+    const highlightTechnologies = (description, technologies) => {
+        let highlightedDescription = description;
+        const allTechnologies = [...technologies.backend, ...technologies.frontend, ...technologies.other];
+        allTechnologies.forEach(tech => {
+            const regex = new RegExp(`\\b${tech}\\b`, 'gi');
+            highlightedDescription = highlightedDescription.replace(regex, match => {
+                const capitalizedTech = match.charAt(0).toUpperCase() + match.slice(1);
+                return `<strong>${capitalizedTech}</strong>`;
+            });
+        });
+        return highlightedDescription;
+    };
+
+    const projectTranslation = translations[project.title.toLowerCase().replace(/\s+/g, '_')];
+    const highlightedDescription = highlightTechnologies(projectTranslation.description[language], project.technologies);
 
     return (
-        <div className="project-detail">
-            <h1>{project.title}</h1>
-            <div className="project-header">
-                <img src={project.image} alt={project.title} className="project-image" />
-                <p className="project-description">{project.description}</p>
-            </div>
-            <h3>Backend</h3>
-            <div className="technologies">
-                {project.technologies.backend.map((tech, index) => (
-                    <i key={index} className={`devicon-${tech.toLowerCase()}-plain`}></i>
-                ))}
-            </div>
-            <h3>Frontend</h3>
-            <div className="technologies">
-                {project.technologies.frontend.map((tech, index) => (
-                    <i key={index} className={`devicon-${tech.toLowerCase()}-plain`}></i>
-                ))}
-            </div>
-            <h3>Protocol</h3>
-            <div className="technologies">
-                {project.technologies.protocol.map((tech, index) => (
-                    <img key={index} src={ocppImage} alt="OCPP" className="tech-icon" />
-                ))}
+        <div className="page">
+            <h1>{projectTranslation.title[language]}</h1>
+            <div className="project-detail">
+                <div className="project-header">
+                    <img src={images[project.image]} alt={project.title} className="project-image" />
+                </div>
+                <p className="project-description" dangerouslySetInnerHTML={{ __html: highlightedDescription }}></p>
+                <div className="tech">
+                    <div className="technologies-bloc">
+                        <h3>Backend</h3>
+                        <div className="technologies-details">
+                            {project.technologies.backend.map((tech, index) => (
+                                <i key={index} className={`devicon-${tech.toLowerCase()}-plain`}></i>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="technologies-bloc">
+                        <h3>Frontend</h3>
+                        <div className="technologies-details">
+                            {project.technologies.frontend.map((tech, index) => {
+                                if (tech !== "electron") {
+                                    return <i key={index} className={`devicon-${tech.toLowerCase()}-plain`}></i>;
+                                } else {
+                                    return <i key={index} className={`devicon-${tech.toLowerCase()}-original`}></i>;
+                                }
+                            })}
+                        </div>
+                    </div>
+                    <div className="technologies-bloc">
+                        <h3>Other</h3>
+                        <div className="technologies-details">
+                            {project.technologies.other.map((tech, index) => {
+                                if (tech === "ocpp" || tech === "bluetooth") {
+                                    return <img key={index} src={images[tech]} alt={tech} className="tech-icon"/>;
+                                } else {
+                                    return <i key={index}
+                                              className={`devicon-${tech.toLowerCase()}-plain tech-icon`}></i>;
+                                }
+                            })}
+                        </div>
+                    </div>
+                </div>
+                {project.links && (
+                    <div className="project-links">
+                        <h3>Links</h3>
+                        <div className="links">
+                            {project.links.googlePlay && (
+                                <a href={project.links.googlePlay} target="_blank" rel="noopener noreferrer">
+                                    <img src={googlePlayIcon} alt="Google Play" className="store-icon" />
+                                </a>
+                            )}
+                            {project.links.appleStore && (
+                                <a href={project.links.appleStore} target="_blank" rel="noopener noreferrer">
+                                    <img src={appleStoreIcon} alt="Apple Store" className="store-icon" />
+                                </a>
+                            )}
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );

@@ -1,0 +1,158 @@
+.card {
+    width: 700px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s;
+    text-align: center;
+    aspect-ratio: 16/9;
+}
+
+.card-title {
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 0;
+}
+
+.card-title h2 {
+    color: #000;
+    margin: 0;
+}
+
+.imgCard {
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative;
+}
+
+.imgCard img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the image fits within the container without zooming */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.imgCard .card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.imgCard:hover .card-content {
+    opacity: 1;
+}
+
+.imgCard:hover h2 {
+    opacity: 0;
+}
+
+.card-content p {
+    margin: 10px 0;
+    color: white;
+}
+
+.card-content button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-content button:hover {
+    background-color: #0056b3;
+}
+
+@keyframes gummyBearFromLeft {
+    0% {
+        transform: translateX(-100%) scale(1);
+    }
+    50% {
+        transform: translateX(0) scale(1.1);
+    }
+    100% {
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes gummyBearFromRight {
+    0% {
+        transform: translateX(100%) scale(1);
+    }
+    50% {
+        transform: translateX(0) scale(1.1);
+    }
+    100% {
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes titleDelayFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes titleDelayFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.card.from-left {
+    animation: gummyBearFromLeft 0.5s ease-in-out;
+}
+
+.card.from-right {
+    animation: gummyBearFromRight 0.5s ease-in-out;
+}
+
+.card-title.from-left {
+    animation: titleDelayFromLeft 0.5s ease-in-out 0.3s;
+    animation-fill-mode: backwards;
+}
+
+.card-title.from-right {
+    animation: titleDelayFromRight 0.5s ease-in-out 0.3s;
+    animation-fill-mode: backwards;
+}
+.technologies {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px;
+}
+
+.technologies i {
+    font-size: 40px;
+    color: #ffffff;
+}

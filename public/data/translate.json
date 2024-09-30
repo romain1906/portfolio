@@ -1,0 +1,113 @@
+{
+  "navbar": {
+    "home": {
+      "fr": "Accueil",
+      "en": "Home"
+    },
+    "about": {
+      "fr": "À propos",
+      "en": "About"
+    },
+    "projects": {
+      "fr": "Projets",
+      "en": "Projects"
+    },
+    "contact": {
+      "fr": "Contact",
+      "en": "Contact"
+    }
+  },
+  "home": {
+    "title": {
+      "fr": "Romain Geurts",
+      "en": "Romain Geurts"
+    },
+    "technologies": {
+      "fr": "Technologies : React, Node.js, JavaScript, MongoDB",
+      "en": "Technologies: React, Node.js, JavaScript, MongoDB"
+    },
+    "description": {
+      "fr": "Je crée des solutions efficaces en utilisant des technologies modernes pour résoudre des problèmes complexes et améliorer l'expérience utilisateur.",
+      "en": "I create efficient solutions using modern technologies to solve complex problems and improve user experience."
+    },
+    "autodidacte": {
+      "fr": "Développeur logiciel autodidacte, passionné par les technologies web et le développement d'applications.",
+      "en": "Self-taught software developer, passionate about web technologies and application development."
+    },
+    "cta_projects": {
+      "fr": "Projets",
+      "en": "Projects"
+    },
+    "cta_contact": {
+      "fr": "Contact",
+      "en": "Contact"
+    }
+  }
+,
+  "contact": {
+    "title": {
+      "fr": "Contactez-nous",
+      "en": "Contact Us"
+    },
+    "form": {
+      "name_label": {
+        "fr": "Nom",
+        "en": "Name"
+      },
+      "email_label": {
+        "fr": "Email",
+        "en": "Email"
+      },
+      "message_label": {
+        "fr": "Message",
+        "en": "Message"
+      },
+      "submit_button": {
+        "fr": "Envoyer",
+        "en": "Send"
+      }
+    }
+  },
+  "projects": {
+    "charge_stream": {
+      "title": {
+        "fr": "Charge Stream",
+        "en": "Charge Stream"
+      },
+      "description": {
+        "fr": "Charge Stream est une application que j'ai développée durant mon stage de 15 semaines, du 29 janvier au 17 mai. Son objectif est de faciliter la gestion des bornes de recharge pour véhicules électriques, en utilisant le protocole OCPP pour communiquer directement avec les bornes.\n\nLe backend repose sur Spring, offrant une architecture solide pour la gestion des données et des échanges avec les bornes, tandis que le frontend, conçu avec Angular et PrimeNG, propose une interface utilisateur fluide et réactive. L'application est déployée à l'aide de Docker et hébergée sur amazonwebservices, assurant performance et scalabilité.\n\nCe projet m'a permis de renforcer mes compétences en développement, en intégrant des technologies modernes tout en participant à toutes les étapes du cycle de vie du produit.",
+        "en": "Charge Stream is an application I developed during my 15-week internship, from January 29 to May 17. Its goal is to facilitate the management of electric vehicle charging stations, using the OCPP protocol to communicate directly with the stations.\n\nThe backend is based on Spring, providing a solid architecture for data management and exchanges with the stations, while the frontend, designed with Angular and PrimeNG, offers a smooth and responsive user interface. The application is deployed using Docker and hosted on Amazon Web Services, ensuring performance and scalability.\n\nThis project allowed me to strengthen my development skills by integrating modern technologies while participating in all stages of the product lifecycle."
+      }
+    },
+    "levita_controler": {
+      "title": {
+        "fr": "Levita Controler",
+        "en": "Levita Controller"
+      },
+      "description": {
+        "fr": "<strong>Levita Controler :</strong>\n\nLevita Controler est une application mobile que j'ai développée et mise en ligne sur l'Apple Store et Google Play, issue du projet Salto proposé par HELMo. Construite avec Flutter et la bibliothèque flutter_blue_plus, elle permet de contrôler exclusivement les dispositifs Levita via Bluetooth. Grâce à une interface fluide et intuitive, les utilisateurs peuvent gérer et configurer facilement les appareils Levita. En plus de mon rôle de développeur, j'ai assuré la fonction de project manager durant le premier quadrimestre, dirigeant le projet et supervisant l'équipe avant de me consacrer à mon stage lors du deuxième quadrimestre. Ce projet m'a permis de gérer toutes les étapes du développement, jusqu'à la publication sur les principales plateformes mobiles.\n\n<hr><strong>Levita QRCode :</strong>\n\nLevita QRCode est une application de bureau développée en Angular et Electron, conçue pour générer et gérer des QR codes spécifiques aux dispositifs Levita. L'application combine la flexibilité des technologies web avec la robustesse d'une application native de bureau, facilitant le partage sécurisé d'informations pour l'écosystème Levita.",
+        "en": "<strong>Levita Controller:</strong>\n\nLevita Controller is a mobile application that I developed and published on the Apple Store and Google Play, stemming from the Salto project proposed by HELMo. Built with Flutter and the flutter_blue_plus library, it allows exclusive control of Levita devices via Bluetooth. With a smooth and intuitive interface, users can easily manage and configure Levita devices. In addition to my role as a developer, I served as the project manager during the first semester, leading the project and supervising the team before focusing on my internship during the second semester. This project allowed me to manage all stages of development, up to publication on major mobile platforms.\n\n<hr><strong>Levita QRCode:</strong>\n\nLevita QRCode is a desktop application developed in Angular and Electron, designed to generate and manage QR codes specific to Levita devices. The application combines the flexibility of web technologies with the robustness of a native desktop application, facilitating the secure sharing of information for the Levita ecosystem."
+      }
+    },
+    "gvoyage": {
+      "title": {
+        "fr": "GVoyage",
+        "en": "GVoyage"
+      },
+      "description": {
+        "fr": "GVoyage est le projet le plus ambitieux proposé par HELMo en dernière année, représentant une véritable mise en pratique des compétences acquises tout au long du cursus. Ce projet comprend une API REST développée en Dotnetcore, servant de fondation pour les échanges de données entre les différents modules de l'application.\n\n<br><br>Le site web, réalisé en Vuejs, offre une interface moderne et réactive, facilitant l'expérience utilisateur sur tous les supports. De plus, une application mobile, construite en Flutter, complète l'écosystème en permettant aux utilisateurs d'accéder aux services de GVoyage directement depuis leurs smartphones.\n\n<br><br>Ce projet, combinant des technologies avancées et un déploiement multiplateforme, m'a permis de travailler sur l'intégration complète d'un système complexe, depuis le backend jusqu'à l'interface utilisateur mobile et web.",
+        "en": "GVoyage is the most ambitious project proposed by HELMo in the final year, representing a true application of the skills acquired throughout the course. This project includes a REST API developed in Dotnetcore, serving as the foundation for data exchanges between the different modules of the application.\n\n<br><br>The website, built with Vuejs, offers a modern and responsive interface, facilitating the user experience on all devices. Additionally, a mobile application, built with Flutter, completes the ecosystem by allowing users to access GVoyage services directly from their smartphones.\n\n<br><br>This project, combining advanced technologies and a multiplatform deployment, allowed me to work on the complete integration of a complex system, from the backend to the mobile and web user interface."
+      }
+    },
+    "lesahrweb": {
+      "title": {
+        "fr": "LesahrWeb",
+        "en": "LesahrWeb"
+      },
+      "description": {
+        "fr": "Lesahr Web est la première application sur laquelle j'ai eu l'occasion de travailler lors de ma première année dans le cadre du cursus Salto. En équipe de 5, nous avons entrepris de refaire tout le backend de l'application en PHP 8, modernisant ainsi l'architecture et optimisant les performances.\n\n<br><br>Un aspect essentiel de ce projet a été l'ajout de mesures de sécurité, notamment la protection contre les failles XSS (Cross-Site Scripting), renforçant la fiabilité et la sécurité de l'application. Ce projet m'a permis d'acquérir une solide expérience en développement backend, en mettant en place des bonnes pratiques de sécurité et en travaillant en équipe sur un projet de refonte complet.",
+        "en": "Lesahr Web is the first application I had the opportunity to work on during my first year as part of the Salto curriculum. In a team of 5, we undertook to redo the entire backend of the application in PHP 8, thus modernizing the architecture and optimizing performance.\n\n<br><br>An essential aspect of this project was the addition of security measures, including protection against XSS (Cross-Site Scripting) vulnerabilities, enhancing the reliability and security of the application. This project allowed me to gain solid experience in backend development, implementing security best practices and working in a team on a complete overhaul project."
+      }
+    }
+  }
+}

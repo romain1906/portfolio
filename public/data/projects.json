@@ -3,12 +3,48 @@
     {
       "id": 1,
       "title": "Charge Stream",
-      "description": "Charge Stream est une application que j'ai fait pendant mon stage de 15 semaines, du 29 janvier au 17 mai. Elle utilise le protocole OCPP pour communiquer avec les bornes directement. Elle a comme back end Spring Boot et comme frontend Angular avec PrimeNG. Les technologies Docker et AWS ont été utilisées.",
+      "description": "Charge Stream est une application que j'ai développée durant mon stage de 15 semaines, du 29 janvier au 17 mai. Son objectif est de faciliter la gestion des bornes de recharge pour véhicules électriques, en utilisant le protocole OCPP pour communiquer directement avec les bornes.\n\nLe backend repose sur Spring, offrant une architecture solide pour la gestion des données et des échanges avec les bornes, tandis que le frontend, conçu avec Angular et PrimeNG, propose une interface utilisateur fluide et réactive. L'application est déployée à l'aide de Docker et hébergée sur amazonwebservices, assurant performance et scalabilité.\n\nCe projet m'a permis de renforcer mes compétences en développement, en intégrant des technologies modernes tout en participant à toutes les étapes du cycle de vie du produit.",
       "image": "chargeStreamImage",
       "technologies": {
-        "backend": ["springboot", "docker", "aws"],
+        "backend": ["spring"],
         "frontend": ["angular", "primeng"],
-        "protocol": ["ocpp"]
+        "other": ["ocpp", "docker", "amazonwebservices"]
+      }
+    },
+    {
+      "id": 2,
+      "title": "Levita Controler",
+      "description": "<strong>Levita Controler :</strong>\n\nLevita Controler est une application mobile que j'ai développée et mise en ligne sur l'Apple Store et Google Play, issue du projet Salto proposé par HELMo. Construite avec Flutter et la bibliothèque flutter_blue_plus, elle permet de contrôler exclusivement les dispositifs Levita via Bluetooth. Grâce à une interface fluide et intuitive, les utilisateurs peuvent gérer et configurer facilement les appareils Levita. En plus de mon rôle de développeur, j'ai assuré la fonction de project manager durant le premier quadrimestre, dirigeant le projet et supervisant l'équipe avant de me consacrer à mon stage lors du deuxième quadrimestre. Ce projet m'a permis de gérer toutes les étapes du développement, jusqu'à la publication sur les principales plateformes mobiles.\n\n<hr><strong>Levita QRCode :</strong>\n\nLevita QRCode est une application de bureau développée en Angular et Electron, conçue pour générer et gérer des QR codes spécifiques aux dispositifs Levita. L'application combine la flexibilité des technologies web avec la robustesse d'une application native de bureau, facilitant le partage sécurisé d'informations pour l'écosystème Levita.",
+      "image": "levitaImage",
+      "technologies": {
+        "backend": [],
+        "frontend": ["flutter","angular","electron"],
+        "other": ["bluetooth"]
+      },
+      "links": {
+        "googlePlay": "https://play.google.com/store/apps/details?id=com.salto.levita.magic&pcampaignid=web_share",
+        "appleStore": "https://apps.apple.com/be/app/levita-controller/id6504800301?l=fr-FR"
+      }    },
+    {
+      "id": 3,
+      "title": "GVoyage",
+      "description": "GVoyage est le projet le plus ambitieux proposé par HELMo en dernière année, représentant une véritable mise en pratique des compétences acquises tout au long du cursus. Ce projet comprend une API REST développée en Dotnetcore, servant de fondation pour les échanges de données entre les différents modules de l'application.\n\n<br><br>Le site web, réalisé en Vuejs, offre une interface moderne et réactive, facilitant l'expérience utilisateur sur tous les supports. De plus, une application mobile, construite en Flutter, complète l'écosystème en permettant aux utilisateurs d'accéder aux services de GVoyage directement depuis leurs smartphones.\n\n<br><br>Ce projet, combinant des technologies avancées et un déploiement multiplateforme, m'a permis de travailler sur l'intégration complète d'un système complexe, depuis le backend jusqu'à l'interface utilisateur mobile et web.",
+      "image": "gvoyageImage",
+      "technologies": {
+        "backend": ["dotnetcore"],
+        "frontend": ["flutter","vuejs"],
+        "other": []
+      }
+    },
+    {
+      "id": 4,
+      "title": "LesahrWeb",
+      "description": "Lesahr Web est la première application sur laquelle j'ai eu l'occasion de travailler lors de ma première année dans le cadre du cursus Salto. En équipe de 5, nous avons entrepris de refaire tout le backend de l'application en PHP 8, modernisant ainsi l'architecture et optimisant les performances.\n\n<br><br>Un aspect essentiel de ce projet a été l'ajout de mesures de sécurité, notamment la protection contre les failles XSS (Cross-Site Scripting), renforçant la fiabilité et la sécurité de l'application. Ce projet m'a permis d'acquérir une solide expérience en développement backend, en mettant en place des bonnes pratiques de sécurité et en travaillant en équipe sur un projet de refonte complet.",
+      "image": "lesahrImage",
+      "technologies": {
+        "backend": ["php"],
+        "frontend": [],
+        "other": []
       }
     }
   ]

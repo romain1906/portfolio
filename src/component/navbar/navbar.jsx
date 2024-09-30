@@ -1,24 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css'; // Tu peux ajouter des styles spécifiques ici
+import './navbar.css';
+import { LanguageContext } from '../../context/LanguageContext';
 
 const Navbar = () => {
+    const { language, setLanguage } = useContext(LanguageContext);
+
+    const handleLanguageChange = (event) => {
+        setLanguage(event.target.value);
+    };
+
     return (
         <nav className="navbar">
             <ul>
                 <li>
-                    <Link to="/">Accueil</Link>
+                    <Link to="/">{language === 'fr' ? 'Accueil' : 'Home'}</Link>
                 </li>
                 <li>
-                    <Link to="/about">À propos</Link>
+                    <Link to="/about">{language === 'fr' ? 'À propos' : 'About'}</Link>
                 </li>
                 <li>
-                    <Link to="/projects">Projets</Link>
+                    <Link to="/projects">{language === 'fr' ? 'Projets' : 'Projects'}</Link>
                 </li>
                 <li>
-                    <Link to="/contact">Contact</Link>
+                    <Link to="/contact">{language === 'fr' ? 'Contact' : 'Contact'}</Link>
                 </li>
             </ul>
+            <select value={language} onChange={handleLanguageChange}>
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+            </select>
         </nav>
     );
 };

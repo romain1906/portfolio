@@ -1,0 +1,110 @@
+.page {
+    width: 100%;
+    height: 100%;
+}
+
+.page h1 {
+    font-size: 40px;
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.project-detail {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 70% 30%; /* First row is 70% height, second row is 30% height */
+    gap: 20px;
+    padding: 20px;
+    height: 100%; /* Ensure the grid takes the full viewport height */
+}
+
+.project-header {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    width: 100%;
+    height: 100%;
+}
+
+.project-description {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    font-size: 18px;
+    margin: 0;
+    overflow-y: auto; /* Make the text scrollable if too long */
+    width: 90%;
+    height: 100%; /* Ensure it doesn't exceed the grid cell height */
+}
+
+.tech {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.technologies-bloc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.project-detail h3 {
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 80%;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.27);
+}
+
+.project-image {
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the image fits within the container without zooming */
+    aspect-ratio: 16/9/* Ensure the image fits within the container without zooming */
+}
+
+.technologies-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px; /* Add spacing between technologies */
+}
+
+.technologies-details i, .technologies img {
+    font-size: 50px;
+    color: #000;
+}
+
+.tech-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.store-icon {
+    width: 50px;
+}
+
+.project-links {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    width: 100%;
+}
+
+.project-links h3 {
+    background-color: #b3d8ff; /* Light grey background */
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(1, 22, 119, 0.27);
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

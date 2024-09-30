@@ -1,0 +1,169 @@
+/* Typographie globale */
+body, h1, p, a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300; /* Version légère pour un aspect élégant */
+}
+
+/* Style général du conteneur */
+.home-container {
+    background-color: #FFFFFF; /* Blanc pour un aspect épuré */
+    color: #333333; /* Gris foncé pour le texte, plus doux que le noir */
+    text-align: center;
+    padding-bottom:  20px; /* Plus d'air pour créer un effet de luxe */
+}
+
+/* Style des titres principaux */
+h1 {
+    font-size: 4rem; /* Grand titre pour mettre en valeur ton nom */
+    color: #1E90FF; /* Bleu élégant pour le nom */
+    margin-bottom: 30px;
+    font-weight: 600; /* Texte plus épais pour plus d'impact */
+    letter-spacing: 2px; /* Espacement des lettres pour plus de modernité */
+}
+
+p {
+    font-size: 1.3rem; /* Taille de texte légèrement supérieure pour plus de clarté */
+    color: #666666; /* Gris clair pour le texte des paragraphes */
+    margin-bottom: 40px;
+    line-height: 1.8; /* Espacement généreux pour la lisibilité */
+}
+
+/* Boutons d'appel à l'action */
+.cta-buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Ajout d'espacement entre les boutons */
+}
+
+.btn-primary, .btn-secondary {
+    padding: 15px 30px; /* Boutons plus grands et plus espacés */
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 50px; /* Boutons arrondis pour un effet moderne */
+    transition: all 0.4s ease; /* Transition douce pour le survol */
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre subtile */
+}
+
+.btn-primary {
+    background-color: #1E90FF; /* Bleu élégant pour le bouton principal */
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0c74d9; /* Bleu plus foncé au survol */
+    transform: translateY(-3px); /* Effet de flottement */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
+
+.btn-secondary {
+    background-color: transparent; /* Fond transparent pour plus de classe */
+    color: #333333; /* Couleur du texte en gris foncé */
+    border: 2px solid #333333; /* Bordure subtile pour le bouton secondaire */
+}
+
+.btn-secondary:hover {
+    background-color: #333333; /* Inversion des couleurs au survol */
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Style de l'image de profil */
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Image arrondie */
+    border: 5px solid #1E90FF; /* Bordure bleue élégante autour de l'image */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    transition: all 0.4s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05); /* Zoom subtil au survol */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Ombre accentuée au survol */
+}
+
+/* Section des technologies */
+.technologies {
+    margin-top: 50px;
+}
+
+.technologies p {
+    font-size: 1.1rem;
+    color: #1E90FF; /* Bleu pour les technologies */
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Texte capitalisé pour un effet moderne */
+}
+
+/* Liens des réseaux sociaux */
+.social-links {
+    margin-top: 50px;
+}
+
+.social-links a img {
+    width: 40px;
+    margin-right: 20px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Animation de survol */
+    filter: grayscale(100%); /* Icônes en gris par défaut */
+}
+
+.social-links a:hover img {
+    transform: scale(1.15); /* Zoom des icônes au survol */
+    filter: grayscale(0%); /* Retrait du filtre au survol */
+}
+
+/* Citation */
+blockquote {
+    font-style: italic;
+    color: #666666; /* Gris léger pour un effet subtil */
+    margin-top: 50px;
+    border-left: 5px solid #1E90FF; /* Barre bleue élégante à gauche de la citation */
+    padding-left: 20px;
+    margin-left: 50px;
+    font-size: 1.2rem;
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+    .home-container {
+        padding: 50px 10px;
+    }
+
+    h1 {
+        font-size: 3rem; /* Réduire légèrement la taille du texte sur mobile */
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .btn-primary, .btn-secondary {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .social-links a img {
+        width: 30px;
+    }
+}
+
+.profile-pic-container {
+    perspective: 1000px;
+}
+
+.profile-pic-container img {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.profile-pic-container.hovered img {
+    transform: rotateY(180deg);
+}
