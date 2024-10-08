@@ -1,6 +1,7 @@
+/* Styles globaux */
 .page {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 .page h1 {
@@ -12,10 +13,10 @@
 .project-detail {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 70% 30%; /* First row is 70% height, second row is 30% height */
+    grid-template-rows: 70% 30%; /* Première rangée: 70%, Deuxième: 30% */
     gap: 20px;
     padding: 20px;
-    height: 100%; /* Ensure the grid takes the full viewport height */
+    height: 100%; /* Assurer que la grille prend toute la hauteur de la page */
 }
 
 .project-header {
@@ -30,9 +31,9 @@
     grid-row: 1 / 2;
     font-size: 18px;
     margin: 0;
-    overflow-y: auto; /* Make the text scrollable if too long */
+    overflow-y: auto; /* Rendre le texte scrollable si trop long */
     width: 90%;
-    height: 100%; /* Ensure it doesn't exceed the grid cell height */
+    height: 100%; /* S'assurer que la description ne dépasse pas la hauteur de la grille */
 }
 
 .tech {
@@ -51,7 +52,7 @@
 }
 
 .project-detail h3 {
-    background-color: #f0f0f0; /* Light grey background */
+    background-color: #f0f0f0; /* Fond gris clair */
     padding: 5px 10px;
     border-radius: 5px;
     width: 80%;
@@ -63,18 +64,19 @@
     width: auto;
     max-width: 100%;
     height: 100%;
-    object-fit: contain; /* Ensure the image fits within the container without zooming */
-    aspect-ratio: 16/9/* Ensure the image fits within the container without zooming */
+    object-fit: contain; /* S'assurer que l'image rentre dans le conteneur */
+    aspect-ratio: 16/9; /* Ratio d'image */
 }
 
 .technologies-details {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px; /* Add spacing between technologies */
+    gap: 20px; /* Espace entre les icônes de technologies */
 }
 
-.technologies-details i, .technologies img {
+.technologies-details i,
+.technologies img {
     font-size: 50px;
     color: #000;
 }
@@ -95,7 +97,7 @@
 }
 
 .project-links h3 {
-    background-color: #b3d8ff; /* Light grey background */
+    background-color: #b3d8ff; /* Fond bleu clair */
     padding: 5px 10px;
     border-radius: 5px;
     width: 90%;
@@ -107,4 +109,66 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+/* Styles pour les écrans mobiles */
+@media (max-width: 768px) {
+    .page h1 {
+        font-size: 32px; /* Réduction de la taille de la police pour mobile */
+        padding-left: 15px;
+    }
+
+    .project-detail {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .project-header,
+    .project-description,
+    .tech,
+    .project-links {
+        width: 100%;
+    }
+
+    .project-description {
+        font-size: 16px;
+        width: 100%; /* La description occupe toute la largeur sur mobile */
+        height: auto; /* S'adapte automatiquement au contenu */
+        overflow: visible; /* Pas de barre de défilement sur mobile */
+    }
+
+    .tech {
+        flex-direction: column; /* Aligner verticalement les sections */
+        gap: 10px; /* Réduire l'espace entre les sections */
+    }
+
+    .technologies-details {
+        flex-direction: row;
+        flex-wrap: wrap; /* Enrouler les technologies si elles débordent */
+        justify-content: space-evenly; /* Espacement uniforme */
+    }
+
+    .project-image {
+        width: 100%; /* L'image occupe toute la largeur sur mobile */
+        height: auto;
+        object-fit: cover;
+    }
+
+    .store-icon,
+    .tech-icon {
+        width: 40px;
+        height: 40px; /* Réduire la taille des icônes pour mobile */
+    }
+
+    .project-links .links {
+        flex-direction: row;
+        justify-content: space-evenly; /* Uniformiser l'espacement des liens */
+    }
+
+    .project-links h3 {
+        width: 100%;
+        font-size: 18px; /* Réduire la taille de la police */
+    }
 }

@@ -6,10 +6,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Add transition */
-    max-height: 0; /* Initial state */
-    opacity: 0; /* Initial state */
-    overflow: hidden; /* Ensure content is hidden when max-height is 0 */
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
 }
 
 .navbar.show {
@@ -17,7 +17,6 @@
     opacity: 1;
 }
 
-/* Other styles remain unchanged */
 .navbar ul {
     list-style: none;
     display: flex;
@@ -49,10 +48,9 @@
     cursor: pointer;
 }
 
-/* Mobile menu button */
 .mobile-menu-button {
-    display: block;
-    background-color: #5f5f5f; /* Show the button on mobile */
+    display: none;
+    background-color: #5f5f5f;
     color: white;
     border: none;
     font-size: 24px;
@@ -61,7 +59,18 @@
 }
 
 .overlay {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: #333;
+    color: white;
+    width: 100vw;
+    z-index: 3;
     display: none;
+} 
+
+.overlay.show {
+    display: flex;
 }
 
 .logo {
@@ -77,22 +86,21 @@
         align-items: flex-start;
         display: none; /* Hide navbar by default on mobile */
         position: absolute;
-        top: 60px; /* Ajustez cette valeur en fonction de la hauteur de l'overlay */
+        top: 60px;
         width: 100vw;
         padding: 0;
-        background-color: #5f5f5f; /* Couleur de fond pour la navbar */
-        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Add transition */
-        max-height: 0; /* Initial state */
-        opacity: 0; /* Initial state */
-        overflow: hidden; /* Ensure content is hidden when max-height is 0 */
-
+        background-color: #5f5f5f;
+        z-index: 2;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
     }
 
     .navbar.show {
         display: flex;
         border-radius: 0 0 10px 10px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.227);
-        max-height: 500px; /* Adjust as needed */
+        max-height: 500px;
         opacity: 1;
         z-index: 3;
     }
@@ -112,26 +120,17 @@
 
     .mobile-menu-button {
         display: block;
-        background-color: #5f5f5f; /* Show the button on mobile */
-        color: white;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-        margin-left: 10px;
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar {
+        display: flex; /* Always show navbar on larger screens */
+        max-height: none;
+        opacity: 1;
     }
 
-    .overlay {
-        display: flex;
-        align-items: center; /* Centrer verticalement */
-        justify-content: start; /* Espacer les éléments */
-        background-color: #333; /* Couleur de fond */
-        color: white; /* Couleur du texte */
-        width: 100vw;
-    }
-
-    .logo {
-        font-size: 1.5rem;
-        color: #fff;
-        margin: 20px 20px;
+    .mobile-menu-button {
+        display: none;
     }
 }
