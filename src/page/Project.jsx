@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Carousel from 'react-spring-3d-carousel';
 import { config } from 'react-spring';
 import Card from '../component/card/card';
+import { useSwipeable } from 'react-swipeable';
 
 const Projects = () => {
     const [goToSlide, setGoToSlide] = useState(0);
@@ -9,6 +10,7 @@ const Projects = () => {
     const [showNavigation, setShowNavigation] = useState(true);
     const [slides, setSlides] = useState([]);
     const [prevSlide, setPrevSlide] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
 
     const images = {
         chargeStreamImage: '/assets/chargeStream.png',
@@ -38,6 +40,16 @@ const Projects = () => {
                 content: <Card id={4} title="LesahrWeb" description="Mignation de version de PHP pour l'application" image={images.lesahrImage} technologies={["php"]} />
             }
         ]);
+
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
+        const handleMediaQueryChange = (e) => {
+            setIsMobile(e.matches);
+            setOffsetRadius(e.matches ? 1 : 2);
+        };
+        mediaQuery.addEventListener('change', handleMediaQueryChange);
+        handleMediaQueryChange(mediaQuery); // Set initial value
+
+        return () => mediaQuery.removeEventListener('change', handleMediaQueryChange);
     }, []);
 
     const handleSlideChange = (index) => {
@@ -60,8 +72,15 @@ const Projects = () => {
         setGoToSlide(index);
     };
 
+    const swipeHandlers = useSwipeable({
+        onSwipedLeft: () => handleSlideChange((goToSlide + 1) % slides.length),
+        onSwipedRight: () => handleSlideChange((goToSlide - 1 + slides.length) % slides.length),
+        preventDefaultTouchmoveEvent: true,
+        trackMouse: true
+    });
+
     return (
-        <div style={{ width: "80%", height: "500px", margin: "0 auto" }}>
+        <div {...swipeHandlers} style={{ width: "90%", height: "500px", margin: "0 auto" }}>
             <Carousel
                 slides={slides}
                 goToSlide={goToSlide}

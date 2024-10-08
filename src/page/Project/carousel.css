@@ -1,0 +1,29 @@
+/* carousel.css */
+
+.carousel-container {
+    width: 80%;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide.vertical {
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        height: auto;
+    }
+
+    .carousel-slide {
+        flex-direction: column;
+    }
+}

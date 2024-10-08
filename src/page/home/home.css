@@ -70,33 +70,6 @@ p {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Style de l'image de profil */
-.profile-pic {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%; /* Image arrondie */
-    border: 5px solid #1E90FF; /* Bordure bleue élégante autour de l'image */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Ombre douce */
-    transition: all 0.4s ease;
-}
-
-.profile-pic:hover {
-    transform: scale(1.05); /* Zoom subtil au survol */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Ombre accentuée au survol */
-}
-
-/* Section des technologies */
-.technologies {
-    margin-top: 50px;
-}
-
-.technologies p {
-    font-size: 1.1rem;
-    color: #1E90FF; /* Bleu pour les technologies */
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase; /* Texte capitalisé pour un effet moderne */
-}
 
 /* Liens des réseaux sociaux */
 .social-links {
@@ -115,21 +88,71 @@ p {
     filter: grayscale(0%); /* Retrait du filtre au survol */
 }
 
-/* Citation */
-blockquote {
-    font-style: italic;
-    color: #666666; /* Gris léger pour un effet subtil */
-    margin-top: 50px;
-    border-left: 5px solid #1E90FF; /* Barre bleue élégante à gauche de la citation */
-    padding-left: 20px;
-    margin-left: 50px;
-    font-size: 1.2rem;
+
+
+
+/* Container rond avec effet de glow */
+.profile-pic-container {
+    position: relative;
+    margin: 50px auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: visible;
+}
+
+.profile-pic-container .inner {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: #0000ff00;
+}
+
+.profile-pic-container::before,
+.profile-pic-container::after {
+    content: ' ';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #99f0d6, #0000ff, #66dbfc, #191970, #9797ff, #0000cd, #347bff, #191970);
+
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 50%;
+    z-index: 1;
+    animation: steam 60s linear infinite;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-pic-container::after {
+    filter: blur(50px);
+}
+
+@keyframes steam {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
 }
 
 /* Responsivité pour les petits écrans */
 @media (max-width: 768px) {
     .home-container {
-        padding: 50px 10px;
+        padding: 10px 10px;
     }
 
     h1 {
@@ -153,17 +176,4 @@ blockquote {
     .social-links a img {
         width: 30px;
     }
-}
-
-.profile-pic-container {
-    perspective: 1000px;
-}
-
-.profile-pic-container img {
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-
-.profile-pic-container.hovered img {
-    transform: rotateY(180deg);
 }

@@ -1,3 +1,5 @@
+/* card.css */
+
 .card {
     width: 700px;
     height: 500px;
@@ -145,6 +147,7 @@
     animation: titleDelayFromRight 0.5s ease-in-out 0.3s;
     animation-fill-mode: backwards;
 }
+
 .technologies {
     display: flex;
     gap: 10px;
@@ -155,4 +158,53 @@
 .technologies i {
     font-size: 40px;
     color: #ffffff;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    /* Mobile styles */
+@media (max-width: 768px) {
+    .card {
+        width: 80vw;
+        height: auto;
+        aspect-ratio: auto;
+        background: linear-gradient(135deg, #007bff 25%, #0056b3 75%); /* Dégradé bleu */
+        background-size: cover; /* Couvrir toute la carte */
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    }
+    
+    .imgCard {
+        padding-top: 0;
+        width: 100%;
+        height: auto;
+    }
+    
+    .imgCard .card-content {
+        position: static;
+        background-color: transparent;
+        color: white; /* Texte en blanc pour contraster avec le fond bleu */
+        opacity: 1;
+        transition: none;
+    }
+    
+    .imgCard img {
+        position: static;
+        border-radius: 0;
+    }
+    
+    .card-title {
+        background-color: transparent;
+        padding: 15px 0;
+    }
+    
+    .card-title h2 {
+        color: #ffffff; /* Couleur de base du texte */
+
+    }
+    
+    
+    
+}
 }
