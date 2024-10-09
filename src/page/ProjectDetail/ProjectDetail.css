@@ -110,7 +110,23 @@
     flex-direction: row;
     justify-content: space-around;
 }
+.next-project-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .next-project-link:hover {
+    text-decoration: underline;
+  }
 
+  .headerProject {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 /* Styles pour les écrans mobiles */
 @media (max-width: 768px) {
     .page h1 {

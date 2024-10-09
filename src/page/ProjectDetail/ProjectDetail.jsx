@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { LanguageContext } from '../../context/LanguageContext';
 import "./ProjectDetail.css";
 
@@ -57,8 +57,13 @@ const ProjectDetail = () => {
 
     return (
         <div className="page">
-            <h1>{projectTranslation.title[language]}</h1>
-            <div className="project-detail">
+<div className="headerProject">
+      <h1>{projectTranslation.title[language]}</h1>
+      {/* Add link to the next project */}
+      <Link to={`/project/${project.next.id}`} className="next-project-link">
+        {project.next.title} &rarr;
+      </Link>
+    </div>            <div className="project-detail">
                 <div className="project-header">
                     <img src={images[project.image]} alt={project.title} className="project-image" />
                 </div>

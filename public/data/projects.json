@@ -9,6 +9,10 @@
         "backend": ["spring"],
         "frontend": ["angular", "primeng"],
         "other": ["ocpp", "docker", "amazonwebservices"]
+      },
+      "next":{
+        "title":"Levita Controler",
+        "id":2
       }
     },
     {
@@ -24,7 +28,12 @@
       "links": {
         "googlePlay": "https://play.google.com/store/apps/details?id=com.salto.levita.magic&pcampaignid=web_share",
         "appleStore": "https://apps.apple.com/be/app/levita-controller/id6504800301?l=fr-FR"
-      }    },
+      },
+      "next":{
+        "title":"GVoyage",
+        "id":3
+        }
+    },
     {
       "id": 3,
       "title": "GVoyage",
@@ -34,6 +43,10 @@
         "backend": ["dotnetcore"],
         "frontend": ["flutter","vuejs"],
         "other": []
+      },
+      "next":{
+        "title":"LesahrWeb",
+        "id":4
       }
     },
     {
@@ -45,6 +58,10 @@
         "backend": ["php"],
         "frontend": [],
         "other": []
+      },
+      "next":{
+        "title":"Charge Stream",
+        "id":1
       }
     }
   ]

@@ -10,6 +10,7 @@
     max-height: 0;
     opacity: 0;
     overflow: hidden;
+    width: 100vw;
 }
 
 .navbar.show {
@@ -20,6 +21,8 @@
 .navbar ul {
     list-style: none;
     display: flex;
+    width: 100%;
+    justify-content: space-around;
     margin: 0;
     padding: 0;
 }
@@ -33,6 +36,7 @@
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
+    text-align: center;
 }
 
 .navbar a:hover {
